@@ -565,8 +565,8 @@ MonoBehaviour:
   phoenixFlash: {fileID: 1727856128812275453, guid: 5de5e1d4361c4934fb6920590969e115, type: 3}
   yoruFlash: {fileID: 9219892115060171180, guid: b20f012fa8278894aa934222bf22cc77, type: 3}
   instantiatedFlash: {fileID: 7488415981927814257, guid: 608b97a7d8d83e14197767d4489e0fee, type: 3}
-  curveForce: 500
-  initialSpeed: 10
+  curveForce: 40
+  initialSpeed: 20
 --- !u!1 &795421766
 GameObject:
   m_ObjectHideFlags: 0

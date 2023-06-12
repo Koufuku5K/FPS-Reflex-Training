@@ -98,11 +98,11 @@ public class FlashGenerator : MonoBehaviour
         {
             case flashDirection.Left:
                 rb.velocity = -transform.right * initialSpeed;
-                rb.AddForce(-transform.forward * curveForce, ForceMode.Force);
+                rb.AddForce(-transform.forward * curveForce, ForceMode.Impulse);
                 break;
             case flashDirection.Right:
                 rb.velocity = transform.right * initialSpeed;
-                rb.AddForce(-transform.forward * curveForce, ForceMode.Force);
+                rb.AddForce(-transform.forward * curveForce, ForceMode.Impulse);
                 break;
         }
     }
