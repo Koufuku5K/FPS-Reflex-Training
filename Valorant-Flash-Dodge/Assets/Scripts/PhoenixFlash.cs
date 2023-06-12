@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Flash : MonoBehaviour
+public class PhoenixFlash : MonoBehaviour
 {
     private IEnumerator coroutine;
 
@@ -17,7 +17,8 @@ public class Flash : MonoBehaviour
     private bool isInsideView = false;
 
     public bool isFlashed = false;
-    public float flashDuration = 1.5f;
+    public float flashDuration;
+    public float flashCharge;
     public float flashTimer = 0f;
 
     private void Awake()
@@ -36,11 +37,9 @@ public class Flash : MonoBehaviour
         flashGenerator = FindObjectOfType<FlashGenerator>();
         instantiatedFlash = flashGenerator.instantiatedFlash;
 
-        // Charging time before the flash flashes.
-        float flashCharge = 0.5f;
-
         coroutine = flashCharging(flashCharge);
         StartCoroutine(coroutine);
+        Debug.Log("Flash Charge: " + flashCharge);
     }
 
     // Update is called once per frame
@@ -63,7 +62,7 @@ public class Flash : MonoBehaviour
         }
     }
 
-    void Flashing()
+    void Flashed()
     {
         instantiatedFlashScreen = Instantiate(flashScreen);
         isFlashed = true;
@@ -74,7 +73,7 @@ public class Flash : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         if (isInsideView)
         {
-            Flashing();
+            Flashed();
             Debug.Log("Flashed!");
         }
         else

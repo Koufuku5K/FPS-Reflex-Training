@@ -5,7 +5,7 @@ using UnityEngine;
 public class FlashScreen : MonoBehaviour
 {
     public bool isFlashed = false;
-    public float flashDuration = 1.1f;
+    public float flashDuration;
     public float flashTimer = 0f;
 
     // Start is called before the first frame update

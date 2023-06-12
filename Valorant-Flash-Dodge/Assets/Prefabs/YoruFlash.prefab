@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1727856128812275453
+--- !u!1 &9219892115060171180
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1727856128812275441}
-  - component: {fileID: 1727856128812275440}
-  - component: {fileID: 1727856128812275443}
-  - component: {fileID: 1727856128812275442}
-  - component: {fileID: 6648416129582095415}
-  - component: {fileID: -437062083691471250}
+  - component: {fileID: 9219892115060171168}
+  - component: {fileID: 9219892115060171183}
+  - component: {fileID: 9219892115060171182}
+  - component: {fileID: 9219892115060171181}
+  - component: {fileID: 6016484930110933743}
+  - component: {fileID: 1398378602096909045}
   m_Layer: 0
-  m_Name: PhoenixFlash
+  m_Name: YoruFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1727856128812275441
+--- !u!4 &9219892115060171168
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1727856128812275453}
+  m_GameObject: {fileID: 9219892115060171180}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.2967463, y: 2.56, z: 22.32}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1727856128812275440
+--- !u!33 &9219892115060171183
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1727856128812275453}
+  m_GameObject: {fileID: 9219892115060171180}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &1727856128812275443
+--- !u!23 &9219892115060171182
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1727856128812275453}
+  m_GameObject: {fileID: 9219892115060171180}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8626b03f3587c4d4b8a8af1400961b24, type: 2}
+  - {fileID: 2100000, guid: 5ec327743cdeeea428fc8ed5bc8c5ef3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,52 +86,52 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &1727856128812275442
+--- !u!135 &9219892115060171181
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1727856128812275453}
+  m_GameObject: {fileID: 9219892115060171180}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &6648416129582095415
+--- !u!54 &6016484930110933743
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1727856128812275453}
+  m_GameObject: {fileID: 9219892115060171180}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-437062083691471250
+--- !u!114 &1398378602096909045
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1727856128812275453}
+  m_GameObject: {fileID: 9219892115060171180}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2a06a186ecc78148847497fc3c7baa6, type: 3}
+  m_Script: {fileID: 11500000, guid: efa5fc53135a46a4e8378e06f62be630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashScreen: {fileID: 7488415981927814258, guid: 608b97a7d8d83e14197767d4489e0fee, type: 3}
+  flashScreen: {fileID: 7488415981927814258, guid: 89c56bb3e02060e40926b07c2a6edbbf, type: 3}
   instantiatedFlashScreen: {fileID: 0}
   flashGenerator: {fileID: 0}
   instantiatedFlash: {fileID: 0}
   isFlashed: 0
-  flashDuration: 1.5
-  flashCharge: 0.5
+  flashDuration: 1.75
+  flashCharge: 0.6
   flashTimer: 0

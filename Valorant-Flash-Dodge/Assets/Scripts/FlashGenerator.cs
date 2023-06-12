@@ -8,14 +8,16 @@ public class FlashGenerator : MonoBehaviour
     float randomX;
     float randomY;
 
-    public GameObject flash;
+    // Current Type of Flash Being Generated
+    public GameObject currentFlash;
+    public GameObject phoenixFlash;
+    public GameObject yoruFlash;
     public GameObject instantiatedFlash;
     enum flashDirection
     {
         Left,
         Right
     }
-    public KeyCode stopKey = KeyCode.Space;
     private bool isGenerating = true;
 
     private IEnumerator spawnFlashes;
@@ -27,7 +29,8 @@ public class FlashGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnInterval = Random.Range(1.5f, 10.0f);
+        currentFlash = phoenixFlash;
+        spawnInterval = Random.Range(2f, 10.0f);
         spawnFlashes = WaitAndSpawn(spawnInterval);
         StartCoroutine(spawnFlashes);
     }
@@ -35,21 +38,44 @@ public class FlashGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(stopKey))
+        // Press Spacebar to stop spawning flash
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("Stop Spawning!");
             isGenerating = false;
         }
+
+        // Press 1 on top of alphanumeric keyboard to spawn Phoenix flash
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            // Spawn Phoenix Flash
+            Debug.Log("Phoenix Flash Spawn!");
+            currentFlash = phoenixFlash;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            // Spawn Yoru Flash
+            Debug.Log("Yoru Flash Spawn!");
+            currentFlash = yoruFlash;
+        }
     }
 
-    public void SpawnFlash()
+    public void SpawnFlash(GameObject flash)
     {
         float randomX = Random.Range(-10f, 10f);
         float randomY = Random.Range(2f, 18f);
         float randomZ = Random.Range(20f, 28f);
 
         instantiatedFlash = Instantiate(flash, new Vector3(randomX, randomY, randomZ), Quaternion.identity);
-        Curve(instantiatedFlash);
+        
+        if (flash == phoenixFlash)
+        {
+            Curve(instantiatedFlash);
+        }
+        else if (flash == yoruFlash)
+        {
+            Bounce(instantiatedFlash);
+        }
     }
 
     private IEnumerator WaitAndSpawn(float waitTime)
@@ -57,7 +83,7 @@ public class FlashGenerator : MonoBehaviour
         while (isGenerating)
         {
             yield return new WaitForSeconds(waitTime);
-            SpawnFlash();
+            SpawnFlash(currentFlash);
         }
     }
 
@@ -79,5 +105,14 @@ public class FlashGenerator : MonoBehaviour
                 rb.AddForce(-transform.forward * curveForce, ForceMode.Force);
                 break;
         }
+    }
+
+    void Bounce(GameObject flashObject)
+    {
+        Rigidbody rb = flashObject.GetComponent<Rigidbody>();
+
+        Vector3 randomDirection = Random.onUnitSphere;
+
+        rb.velocity = randomDirection * initialSpeed;
     }
 }
