@@ -2179,7 +2179,7 @@ GameObject:
   - component: {fileID: 1768306950}
   - component: {fileID: 1768306952}
   m_Layer: 6
-  m_Name: Background
+  m_Name: HowToPlayMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

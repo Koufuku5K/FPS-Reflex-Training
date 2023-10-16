@@ -29,6 +29,7 @@ public class FlashGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 0;
         currentFlash = phoenixFlash;
         spawnInterval = Random.Range(2f, 10.0f);
         spawnFlashes = WaitAndSpawn(spawnInterval);
@@ -57,6 +58,13 @@ public class FlashGenerator : MonoBehaviour
             // Spawn Yoru Flash
             Debug.Log("Yoru Flash Spawn!");
             currentFlash = yoruFlash;
+        }
+
+        // Press Esc to pause the game
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.Log("Quit!");
+            Application.Quit();
         }
     }
 
